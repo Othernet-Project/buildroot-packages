@@ -1,0 +1,9 @@
+config BR2_PACKAGE_PYTHON_DISENTANGLER
+	bool "python-disentangler"
+	depends on BR2_PACKAGE_PYTHON || BR2_PACKAGE_PYTHON3
+	help
+	  Simple dependency tree builder, handles forward and reverse dependencies,
+	  returning an ordered tree with its nodes ordered from root towards
+	  leafs.
+
+	  https://github.com/Outernet-Project/disentangler
