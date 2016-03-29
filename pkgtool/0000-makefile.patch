@@ -1,0 +1,77 @@
+diff --git a/Makefile b/Makefile
+index 9a65046..c4d0e7d 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,19 +1,16 @@
+-TOP_DIR := $(shell pwd)
+--include $(TOP_DIR)/../Makefile.in
+-
+-CC      = $(CROSS_COMPILE)gcc
+-LD      = $(CROSS_COMPILE)ld
+-STRIP	= $(CROSS_COMPILE)strip
++CC      = gcc
++LD      = ld
+ CFLAGS  += -Wall -DLINUX
+ LIBS	 = -lstdc++ -lcrypto
+ 
+-HOSTCC	 	= gcc
+-HOSTLD		= ld
+-HOSTCFLAGS  = -Wall -DLINUX
+-HOSTLIBS 	= -lstdc++ -lcrypto
++TARGET_CC = $(CROSS_COMPILE)gcc
++TARGET_STRIP = $(CROSS_COMPILE)strip
++TARGET_CFLAGS += -Wall -DLINUX
++TARGET_LDFLAGS := $(LDFLAGS)
++
+ DEL_FILE 	= rm -f
+ 
+-HEADERS	 = $(wildcard *.h )
++HEADERS	 = $(wildcard *.h)
+ 
+ TARGETS  = pkgtool mkpkg
+ 
+@@ -22,31 +19,33 @@ TARGETS  = pkgtool mkpkg
+ first: debug
+ 
+ debug: CFLAGS += -ggdb
+-debug: HOSTCFLAGS += -ggdb
++debug: TARGET_CFLAGS += -ggdb
+ release: CFLAGS += -O2
+-release: HOSTCFLAGS += -O2
++release: TARGET_CFLAGS += -O2
+ 
+ debug release: $(TARGETS)
+ 
+ mkpkg: mkpkg.cpp installer.o $(HEADERS)
+ 	@rm -f $@
+-	$(HOSTCC) $(HOSTCFLAGS) -o $@ mkpkg.cpp installer.o $(HOSTLIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ mkpkg.cpp installer.o $(LIBS)
+ 
+ pkgtool: pkgtool.cpp $(HEADERS)
+ 	@rm -f $@
+-	$(CC) $(CFLAGS) -o $@ pkgtool.cpp $(LIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ pkgtool.cpp $(LIBS)
+ 
+ installer.o: installer.cpp $(HEADERS)
+ 	@rm -f $@
+-	$(CC) $(CFLAGS) -o installer.bin installer.cpp -static $(LIBS)
+-	$(STRIP) installer.bin
+-	$(HOSTLD) -r -b binary -o $@ installer.bin
++	$(TARGET_CC) $(TARGET_CFLAGS) $(TARGET_LDFLAGS) -o installer.bin installer.cpp -static $(LIBS)
++	$(TARGET_STRIP) installer.bin
++	$(LD) -r -b binary -o $@ installer.bin
+ 
+ clean:
+ 	$(DEL_FILE) $(TARGETS) installer.bin installer.o
+ 
+ install: $(TARGETS)
+-	@mkdir -p $(STAGING_DIR)/sbin
+-	install -m 0755 pkgtool $(TARGET_DIR)/usr/sbin
+-	@mkdir -p $(HOST_DIR)/usr/bin
+-	install -m 0755 mkpkg $(HOST_DIR)/usr/bin
++	@mkdir -p $(INSTALL_PREFIX)/sbin
++	install -m 0755 pkgtool $(INSTALL_PREFIX)/usr/sbin
++
++hostinstall:
++	@mkdir -p $(INSTALL_PREFIX)/usr/bin
++	install -m 0755 mkpkg $(INSTALL_PREFIX)/usr/bin

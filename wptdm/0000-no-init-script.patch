@@ -1,0 +1,12 @@
+diff --git a/Makefile b/Makefile
+index 80f8837..bc4eb12 100644
+--- a/Makefile
++++ b/Makefile
+@@ -43,7 +43,6 @@ clean:
+ install: $(TARGET)
+ 	@mkdir -p $(INSTALL_PREFIX)/usr/sbin
+ 	install -m 0755 $(TARGET) $(INSTALL_PREFIX)/usr/sbin/
+-	install -m 0755 S85wptdm $(INSTALL_PREFIX)/etc/init.d/
+ 
+ ifneq ($(MAKECMDGOALS),clean)
+     -include $(DEPS)
