@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PYTHON_LIBRARIAN_UI_VERSION = cb34ad07cfe5d6989a7b5761972c59338afa24b4
+PYTHON_LIBRARIAN_UI_VERSION = a4d4e9ceae7ad87e2ffa49c7ceabc23846d5c8b4
 PYTHON_LIBRARIAN_UI_SITE = $(call github,Outernet-Project,librarian-ui,$(PYTHON_LIBRARIAN_UI_VERSION))
 PYTHON_LIBRARIAN_UI_LICENSE = GPL
 PYTHON_LIBRARIAN_UI_SETUP_TYPE = setuptools
