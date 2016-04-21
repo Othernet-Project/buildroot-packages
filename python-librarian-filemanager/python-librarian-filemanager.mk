@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PYTHON_LIBRARIAN_FILEMANAGER_VERSION = v1.1
+PYTHON_LIBRARIAN_FILEMANAGER_VERSION = v1.2
 PYTHON_LIBRARIAN_FILEMANAGER_SITE = $(call github,Outernet-Project,librarian-filemanager,$(PYTHON_LIBRARIAN_FILEMANAGER_VERSION))
 PYTHON_LIBRARIAN_FILEMANAGER_LICENSE = GPL
 PYTHON_LIBRARIAN_FILEMANAGER_SETUP_TYPE = setuptools
