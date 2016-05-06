@@ -1,0 +1,10 @@
+config BR2_PACKAGE_DIR2FAT32
+	bool "dir2fat32"
+	select BR2_PACKAGE_UTIL_LINUX
+	select BR2_PACKAGE_DOSFSTOOLS
+	select BR2_PACKAGE_MTOOLS
+	help
+	  Create a FAT32 disk image from the contents of a directory, without 
+	  mounting or root privileges, completely automatically.
+
+	  https://github.com/Outernet-Project/dir2fat32
