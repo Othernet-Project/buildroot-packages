@@ -1,7 +1,7 @@
 config BR2_PACKAGE_PYTHON_BITPACK
 	bool "python-bitpack"
 	depends on BR2_PACKAGE_PYTHON || BR2_PACKAGE_PYTHON3
-	select PYTHON_BITARRAY
+	select BR2_PACKAGE_PYTHON_BITARRAY
 	help
 	  Data serialization library, essentially turning sequences of data
 	  structures into a compact binary representation.
