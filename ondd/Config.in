@@ -1,7 +1,21 @@
-config BR2_PACKAGE_ONDD
+menuconfig BR2_PACKAGE_ONDD
 	bool "ondd"
 	select BR2_PACKAGE_OPENSSL
 	help
 	  Outernet Data Delivery agent
 	  
 	  http://outernet.is/
+
+if BR2_PACKAGE_ONDD
+
+comment "This package only installs the init script. To compile "
+comment "from source, you need access to the source code repository "
+comment "and you need to enable the following option."
+config BR2_PACKAGE_ONDD_BUILD
+	bool "Install ONDD from source"
+	help
+	  ONDD is closed source. This option allows developers
+	  with access to source code to perform installation
+	  from source.
+
+endif
