@@ -7,7 +7,8 @@
 ONDD_VERSION = 2.1.0
 ONDD_SITE = $(BR2_EXTERNAL)/package/ondd/src
 ONDD_SITE_METHOD = local
-ONDD_LICENSE = PROPRIETARY
+ONDD_LICENSE = OFL
+ONDD_LICENSE_FILE = LICENSE
 
 ifeq ($(BR2_PACKAGE_ONDD_BUILD),y)
 ONDD_DEPENDENCIES = openssl
@@ -17,6 +18,13 @@ define ONDD_INSTALL_TARGET_CMDS
 		CFLAGS=-fpermissive \
 		CC=$(TARGET_CC) clean debug release install
 endef
+
+else
+
+define ONDD_INSTALL_TARGET_CMDS
+	$(INSTALL) -Dm0644 $(@D)/LICENSE $(TARGET_DIR)/opt/licenses/ondd/LICENSE
+endef
+
 endif
 
 define ONDD_INSTALL_INIT_SYSV
