@@ -16,7 +16,7 @@ define FIRMWARE_BRCMFMAC43430_SDIO_INSTALL_TARGET_CMDS
 		$(TARGET_DIR)/lib/firmware/brcm/brcmfmac43430-sdio.bin
 	install -m644 $(@D)/brcm80211/brcm/brcmfmac43430-sdio.txt \
 		$(TARGET_DIR)/lib/firmware/brcm/brcmfmac43430-sdio.txt
-	install -m644 $(@D)/$(FIRMWARE_BRCMFMAC43430_SDIO_LICENSE_FILE) \
+	install -m644 $(@D)/$(FIRMWARE_BRCMFMAC43430_SDIO_LICENSE_FILES) \
 		$(TARGET_DIR)/usr/share/doc/BRCMFMAC43430_FIRMWARE_LICENSE
 endef
 
