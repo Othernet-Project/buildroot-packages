@@ -2,12 +2,14 @@
 
 CONF_PATH=/etc/fsal.ini
 FSAL_PID=/var/run/fsal.pid
+FSAL_LOG_DIR=/mnt/data/log
 DAEMON="fsal-daemon --pid-file $FSAL_PID --conf $CONF_PATH"
 
 case "$1" in
     start)
         [ ! -f $FSAL_PID ] || exit 0
-        echo -n "Starting fsal: "
+        mkdir -p "$FSAL_LOG_DIR"
+        printf "Starting fsal: "
         $DAEMON > /dev/null 2>&1 &
         if [ $? ]; then
             echo "OK"
@@ -17,8 +19,8 @@ case "$1" in
         ;;
     stop)
         if [ -f $FSAL_PID ] ; then
-            echo -n "Stopping fsal: "
-            kill $(cat $FSAL_PID)
+            printf "Stopping fsal: "
+            kill "$(cat $FSAL_PID)"
             echo "OK"
         fi
         ;;

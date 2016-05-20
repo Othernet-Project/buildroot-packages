@@ -3,13 +3,15 @@
 CONF_PATH=/etc/librarian.ini
 LIBRARIAN_PID=/var/run/librarian.pid
 LIBRARIAN_DATA=/mnt/data/librarian
+LIBRARIAN_LOG_DIR=/mnt/data/log
 DAEMON="librarian --conf $CONF_PATH"
 
 case "$1" in
     start)
         [ ! -f $LIBRARIAN_PID ] || exit 0
         mkdir -p $LIBRARIAN_DATA
-        echo -n "Starting librarian: "
+        mkdir -p $LIBRARIAN_LOG_DIR
+        printf "Starting librarian: "
         $DAEMON > /dev/null 2>&1 &
         if [ $? ]; then
             echo $! > $LIBRARIAN_PID
@@ -20,8 +22,8 @@ case "$1" in
         ;;
     stop)
         if [ -f $LIBRARIAN_PID ] ; then
-            echo -n "Stopping librarian: "
-            kill $(cat $LIBRARIAN_PID)
+            printf "Stopping librarian: "
+            kill "$(cat $LIBRARIAN_PID)"
             rm $LIBRARIAN_PID
             echo "OK"
         fi
