@@ -1,4 +1,4 @@
-config BR2_PACKAGE_MONITORING
+menuconfig BR2_PACKAGE_MONITORING
 	bool "monitoring"
 	depends on BR2_PACKAGE_PYTHON
 	select BR2_PACKAGE_PYTHON_BITARRAY
@@ -7,3 +7,14 @@ config BR2_PACKAGE_MONITORING
 	  central server.
 	  
 	  https://github.com/Outernet-Project/monitoring
+
+
+if BR2_PACKAGE_MONITORING
+
+config BR2_MONITORING_PERSISTDIR
+	string "Data directory"
+	default "/mnt/persist"
+	help
+	  Path where monitoring should store its state.
+
+endif # BR2_PACKAGE_MONITORING

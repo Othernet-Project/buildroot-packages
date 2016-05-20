@@ -1,14 +1,15 @@
 #!/bin/sh
 
 DAEMON=/usr/bin/monitoring-client
-PERSIST_DIR=/mnt/persist
+PERSIST_DIR=%PERSISTDIR%
 PLATFORM=$(cat /etc/platform)
 MON_PID=/var/run/monitoring.pid
 MON_KEY=${PERSIST_DIR}/monitoring.key
 MON_ACT=${PERSIST_DIR}/monitoring.yes
 MON_BUF=${PERSIST_DIR}/monitoring.buffer
 MON_URL=http://status.outernet.is/heartbeat/v1/
-LIBRARIAN_SETUP=/mnt/data/librarian/librarian.json
+LIBRARIAN_SETUP=%LIBRARIAN_SETTINGS_FILE%
+
 
 case "$1" in
     start)
@@ -20,7 +21,8 @@ case "$1" in
         # not be recreated even if user removes it before subsequent runs.
         [ -f "$MON_KEY" ] || touch "$MON_ACT"
 
-        echo -n "Starting monitoring: "
+        mkdir -p "$PERSIST_DIR"
+        printf "Starting monitoring: "
         start-stop-daemon -S -q -p $MON_PID -x $DAEMON \
             -- -P $MON_PID -u $MON_URL -k $MON_KEY -b $MON_BUF -a $MON_ACT \
             --platform "$PLATFORM" --setup $LIBRARIAN_SETUP &
@@ -33,7 +35,7 @@ case "$1" in
         fi
         ;;
     stop)
-        echo -n "Stopping monitoring: "
+        printf "Stopping monitoring: "
         start-stop-daemon -K -q -p $MON_PID
         [ $? = 0 ] && echo "OK" || echo "FAIL"
         ;;
