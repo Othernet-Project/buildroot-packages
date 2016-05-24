@@ -1,0 +1,21 @@
+menuconfig BR2_PACKAGE_PYTHON_LFTP
+	bool "python-lftp"
+	depends on BR2_PACKAGE_PYTHON || BR2_PACKAGE_PYTHON3
+	select BR2_PACKAGE_PYTHON_PYFTPDLIB
+	select BR2_PACKAGE_PYTHON_LIBRARIAN_DASHBOARD
+	help
+      Librarian FTP server
+
+	  https://github.com/Outernet-Project/lftp/
+
+if BR2_PACKAGE_PYTHON_LFTP
+
+config BR2_LFTP_BASEDIRS
+	string "Base directories"
+	default "/mnt/downloads"
+	help
+	  Base directories that FTP will serve.
+	  Multiple space-separated paths can be 
+	  specified.
+
+endif # BR2_PACKAGE_PYTHON_LFTP
