@@ -9,6 +9,7 @@ ONDD_GROUP=%GROUP%
 start() {
   mkdir -p "$CACHE_PATH"
   mkdir -p "$MAIN_STORAGE"
+  mkdir -p "$EXT_STORAGE"
   for storage in $MAIN_STORAGE $EXT_STORAGE; do
       chgrp "$ONDD_GROUP" "$storage"
       chmod g+ws "$storage"
