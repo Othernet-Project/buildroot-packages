@@ -15,20 +15,6 @@ config BR2_ONDD_CACHEDIR
 	  Temporary storage directory where ONDD will
 	  store partial downloads.
 
-config BR2_ONDD_INTERNALDIR
-	string "Internal storage mount point"
-	default "/mnt/downloads"
-	help
-	  Mount point of the receiver's internal 
-	  download storage.
-
-config BR2_ONDD_EXTERNALDIR
-    string "External storage mount point"
-	default "/mnt/external"
-	help
-	  Mount point of the receiver's external
-	  download storage.
-
 config BR2_ONDD_GROUP
 	string "Group to use for the download directories"
 	default "data"

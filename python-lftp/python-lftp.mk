@@ -14,7 +14,4 @@ ifeq ($(BR2_PACKAGE_PYTHON_LFTP),y)
 LIBRARIAN_COMPONENTS += lftp
 endif
 
-# We always include these
-LIBRARIAN_SED_COMMANDS += s|%FTP_BASEDIRS%|$(shell $(BR2_EXTERNAL)/scripts/listify.sh $(call qstrip,$(BR2_LFTP_BASEDIRS)))|;
-
 $(eval $(python-package))
