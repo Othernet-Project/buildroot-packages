@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-MONITORING_VERSION = v1.0
+MONITORING_VERSION = v1.1
 MONITORING_SITE = $(call github,Outernet-Project,monitoring,$(MONITORING_VERSION))
 MONITORING_LICENSE = GPLv3+
 MONITORING_LICENSE_FILES = COPYING
