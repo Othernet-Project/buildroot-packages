@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PYTHON_FSAL_VERSION = v2.0
+PYTHON_FSAL_VERSION = 88b11fc0c352dce202be390ce2955cb5c9f4c901
 PYTHON_FSAL_SITE = $(call github,Outernet-Project,fsal,$(PYTHON_FSAL_VERSION))
 PYTHON_FSAL_LICENSE = GPLv3+
 PYTHON_FSAL_LICENSE_FILES = COPYING
