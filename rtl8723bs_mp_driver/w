@@ -1,9 +1,0 @@
-#!/bin/sh
-
-execute() {
-  echo $@
-  $@
-}
-
-execute iwpriv wlan0 $@
-

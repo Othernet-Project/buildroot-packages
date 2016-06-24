@@ -33,13 +33,9 @@ define RTL8723BS_MP_DRIVER_INSTALL_TARGET_CMDS
 	$(MAKE) -C $(@D) $(LINUX_MAKE_FLAGS) KSRC=$(LINUX_DIR) \
 		PREFIX=$(TARGET_DIR) modules_install
 	$(HOST_DIR)/sbin/depmod -a -b $(TARGET_DIR) $(LINUX_VERSION_PROBED)
-	$(INSTALL) -D -m 0644 package/rtl8723bs_mp_driver/rtl8723bs_mp.conf \
+	$(INSTALL) -D -m 0644 \
+		$(BR2_EXTERNAL)/package/rtl8723bs_mp_driver/rtl8723bs_mp.conf \
 		$(TARGET_DIR)/etc/modprobe.d/rtl8723bs_mp.conf
-	$(INSTALL) -m 0755 -D package/rtl8723bs_mp_driver/S20_rtl8723bs_mp_wifi $(TARGET_DIR)/etc/init.d/S20_rtl8723bs_mp_wifi
-
-  $(INSTALL) -D -m 0755 package/rtl8723bs_mp_driver/w_start $(TARGET_DIR)/usr/bin/w_start
-  $(INSTALL) -D -m 0755 package/rtl8723bs_mp_driver/w_stop  $(TARGET_DIR)/usr/bin/w_stop
-  $(INSTALL) -D -m 0755 package/rtl8723bs_mp_driver/w       $(TARGET_DIR)/usr/bin/w
 endef
 
 $(eval $(generic-package))
