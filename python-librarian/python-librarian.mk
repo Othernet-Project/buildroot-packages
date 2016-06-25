@@ -4,11 +4,15 @@
 #
 ################################################################################
 
-PYTHON_LIBRARIAN_VERSION = v3.1
+PYTHON_LIBRARIAN_VERSION = 4ca15d579d0e7ca2321cb9c518e8563e6de4efd9
 PYTHON_LIBRARIAN_SITE = $(call github,Outernet-Project,librarian,$(PYTHON_LIBRARIAN_VERSION))
 PYTHON_LIBRARIAN_LICENSE = GPLv3+
 PYTHON_LIBRARIAN_LICENSE_FILES = COPYING
 PYTHON_LIBRARIAN_SETUP_TYPE = setuptools
+
+ifeq ($(BR2_PACKAGE_PYTHON_LIBRARIAN),y)
+LIBRARIAN_MENU += files
+endif
 
 define PYTHON_LIBRARIAN_INSTALL_INIT_SYSV
 	$(INSTALL) -Dm0755 $(BR2_EXTERNAL)/package/python-librarian/S91librarian \

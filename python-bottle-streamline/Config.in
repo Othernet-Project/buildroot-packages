@@ -1,0 +1,8 @@
+config BR2_PACKAGE_PYTHON_BOTTLE_STREAMLINE
+	bool "python-bottle-streamline"
+	depends on BR2_PACKAGE_PYTHON_BOTTLE
+	help
+	  Bottle Streamline is a collection of classes for writing complex,
+	  modular, and/or reusable route handlers using bottle web framework.
+
+	  http://bottle-streamline.readthedocs.org/
