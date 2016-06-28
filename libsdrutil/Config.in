@@ -1,0 +1,6 @@
+config BR2_PACKAGE_LIBSDRUTIL
+	bool "libsdrutil"
+	select BR2_PACKAGE_LIBRTLSDR
+	help
+	  Utility library for use with USB SDRs.
+

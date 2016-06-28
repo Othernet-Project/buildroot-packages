@@ -1,0 +1,27 @@
+diff --git a/Makefile b/Makefile
+index 1fcf468..05b1139 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,20 @@
++CC := gcc
++INSTALL_PREFIX :=
++PREFIX := $(INSTALL_PREFIX)/usr
++INSTALL := install
++LIBS = -lrtlsdr
++CFLAGS += -fPIC
++
++.PHONY: install all all_local clean
++
++install: all
++	$(INSTALL) -Dm644 libsdrutl.so $(PREFIX)/lib/libsdrutl.so
+ 
+ all: libsdrutl.c sdrutl.h
+-	$(CROSS_COMPILE)gcc -fPIC -shared -o libsdrutl.so libsdrutl.c  -lrtlsdr
++	$(CC) $(CFLAGS) -shared -o libsdrutl.so libsdrutl.c  $(LIBS)
+ 
+ all_local: libsdrutl.c sdrutl.h
+-	$(CROSS_COMPILE)gcc -fPIC -shared -o libsdrutl.so -DLOCALRTLSDR libsdrutl.c -L. -lrtlsdr
++	$(CC) $(CFLAGS) -shared -o libsdrutl.so -DLOCALRTLSDR libsdrutl.c -L. $(LIBS)
+ 
++clean:
++	-rm *.so
