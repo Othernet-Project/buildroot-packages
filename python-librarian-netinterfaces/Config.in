@@ -1,0 +1,10 @@
+config BR2_PACKAGE_PYTHON_LIBRARIAN_NETINTERFACES
+	bool "python-librarian-netinterfaces"
+	depends on BR2_PACKAGE_PYTHON || BR2_PACKAGE_PYTHON3
+	select BR2_PACKAGE_PYTHON_LIBRARIAN
+	select BR2_PACKAGE_PYTHON_HWD
+	select BR2_PACKAGE_PYTHON_PYHOSTAPDCONF
+	help
+	  List and manage network interfaces from librarian.
+
+	  https://github.com/Outernet-Project/librarian-netinterfaces/
