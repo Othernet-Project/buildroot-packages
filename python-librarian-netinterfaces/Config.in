@@ -1,6 +1,6 @@
 config BR2_PACKAGE_PYTHON_LIBRARIAN_NETINTERFACES
 	bool "python-librarian-netinterfaces"
-	depends on BR2_PACKAGE_PYTHON || BR2_PACKAGE_PYTHON3
+	depends on (BR2_PACKAGE_PYTHON || BR2_PACKAGE_PYTHON3) && BR2_PACKAGE_PYTHON_LIBRARIAN
 	select BR2_PACKAGE_PYTHON_HWD
 	select BR2_PACKAGE_PYTHON_PYHOSTAPDCONF
 	help
@@ -9,6 +9,5 @@ config BR2_PACKAGE_PYTHON_LIBRARIAN_NETINTERFACES
 	  https://github.com/Outernet-Project/librarian-netinterfaces/
 
 
-if !BR2_PACKAGE_PYTHON_LIBRARIAN
 comment "python-librarian-netinterfaces depends on python-librarian"
-endif
+	depends on !BR2_PACKAGE_PYTHON_LIBRARIAN

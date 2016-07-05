@@ -1,10 +1,12 @@
 menuconfig BR2_PACKAGE_PYTHON_LFTP
 	bool "python-lftp"
-	depends on BR2_PACKAGE_PYTHON || BR2_PACKAGE_PYTHON3
+	depends on (BR2_PACKAGE_PYTHON || BR2_PACKAGE_PYTHON3) && BR2_PACKAGE_PYTHON_LIBRARIAN
 	select BR2_PACKAGE_PYTHON_PYFTPDLIB
-	select BR2_PACKAGE_PYTHON_LIBRARIAN_DASHBOARD
 	select BR2_PACKAGE_PYTHON_PYSENDFILE
 	help
-      Librarian FTP server
+	  Librarian FTP server
 
 	  https://github.com/Outernet-Project/lftp/
+
+comment "python-lftp depends on python-librarian"
+	depends on !BR2_PACKAGE_PYTHON_LIBRARIAN
