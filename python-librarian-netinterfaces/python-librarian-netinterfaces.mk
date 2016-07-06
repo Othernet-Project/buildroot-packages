@@ -4,14 +4,21 @@
 #
 ################################################################################
 
-PYTHON_LIBRARIAN_NETINTERFACES_VERSION = 5257dc21303b228c44bda5aac2c88ad5edd9b498
+PYTHON_LIBRARIAN_NETINTERFACES_VERSION = 30294996fd8dbe71e64ea2ea8294c7575af51545
 PYTHON_LIBRARIAN_NETINTERFACES_SITE = $(call github,Outernet-Project,librarian-netinterfaces,$(PYTHON_LIBRARIAN_NETINTERFACES_VERSION))
 PYTHON_LIBRARIAN_NETINTERFACES_LICENSE = GPLv3+
 PYTHON_LIBRARIAN_NETINTERFACES_LICENSE_FILES = COPYING
 PYTHON_LIBRARIAN_NETINTERFACES_SETUP_TYPE = setuptools
 
+define PYTHON_LIBRARIAN_NETINTERFACES_INSTALL_CONF
+	$(INSTALL) -Dm644 $(call epkgdir,python-librarian-netinterfaces)/netinterfaces.ini \
+		$(TARGET_DIR)/etc/librarian.d/netinterfaces.ini
+endef
+
 ifeq ($(BR2_PACKAGE_PYTHON_LIBRARIAN_NETINTERFACES),y)
 LIBRARIAN_COMPONENTS += librarian_netinterfaces
+LIBRARIAN_INCLUDES += /etc/librarian.d/netinterfaces.ini
+TARGET_FINALIZE_HOOKS += PYTHON_LIBRARIAN_NETINTERFACES_INSTALL_CONF
 endif
 
 $(eval $(python-package))
