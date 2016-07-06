@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PYTHON_LFTP_VERSION = 60c964cbb3d9f6708d130f012a35286557569bf9
+PYTHON_LFTP_VERSION = c2d4bf3edc850210848d54c2f0ffd6de87cd9685
 PYTHON_LFTP_SITE = $(call github,Outernet-Project,lftp,$(PYTHON_LFTP_VERSION))
 PYTHON_LFTP_LICENSE = GPLv3
 PYTHON_LFTP_LICENSE_FILES = COPYING
@@ -24,7 +24,6 @@ endef
 
 ifeq ($(BR2_PACKAGE_PYTHON_LFTP),y)
 LIBRARIAN_COMPONENTS += lftp
-LIBRARIAN_INCLUDES += /etc/librarian.d/lftp.ini
 TARGET_FINALIZE_HOOKS += PYTHON_LFTP_INSTALL_CONF
 endif
 
