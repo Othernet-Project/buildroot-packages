@@ -9,8 +9,10 @@ ONDD_GROUP=%GROUP%
 ONDD_TIMEOUT_HANDLER=/usr/sbin/ontimeout
 ONDD_EXTRA_ARGS=
 
+. /etc/conf.d/ondd
+
 if [ -x "$ONDD_TIMEOUT_HANDLER" ]; then
-  ONDD_EXTRA_ARGS="--sdr-timeout-handler $ONDD_TIMEOUT_HANDLER"
+  ONDD_EXTRA_ARGS="$ONDD_EXTRA_ARGS --sdr-timeout-handler $ONDD_TIMEOUT_HANDLER"
 fi
 
 start() {

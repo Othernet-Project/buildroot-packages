@@ -22,6 +22,7 @@ define ONDD_INSTALL_TARGET_CMDS
 	$(MAKE) -C $(@D) INSTALL_PREFIX=$(TARGET_DIR) \
 		CFLAGS=-fpermissive \
 		CC=$(TARGET_CC) clean debug release install
+	$(ONDD_INSTALL_CONF)
 endef
 
 else
@@ -36,6 +37,7 @@ define ONDD_INSTALL_INIT_SYSV
 	$(INSTALL) -Dm0755 $(BR2_EXTERNAL)/package/ondd/S90ondd \
 		$(TARGET_DIR)/etc/init.d/S90ondd
 	sed -i '$(ONDD_SED_CMDS)' $(TARGET_DIR)/etc/init.d/S90ondd
+	touch $(TARGET_DIR)/etc/conf.d/ondd
 endef
 
 $(eval $(generic-package))
