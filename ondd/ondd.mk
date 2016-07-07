@@ -36,7 +36,7 @@ endif
 define ONDD_INSTALL_INIT_SYSV
 	$(INSTALL) -Dm644 $(call epkgdir,ondd)/ondd.conf \
 		$(TARGET_DIR)/etc/conf.d/ondd
-	$(INSTALL) -Dm0755 $(call, epkgdir,ondd)/S90ondd \
+	$(INSTALL) -Dm0755 $(call epkgdir,ondd)/S90ondd \
 		$(TARGET_DIR)/etc/init.d/S90ondd
 	$(SED) '$(ONDD_SED_CMDS)' $(TARGET_DIR)/etc/init.d/S90ondd
 endef
