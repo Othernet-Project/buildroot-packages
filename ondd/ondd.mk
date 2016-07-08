@@ -5,8 +5,6 @@
 ################################################################################
 
 ONDD_VERSION = 2.1.0
-ONDD_SITE = $(BR2_EXTERNAL)/package/ondd/src
-ONDD_SITE_METHOD = local
 ONDD_LICENSE = OFL
 ONDD_LICENSE_FILE = LICENSE
 
@@ -15,7 +13,10 @@ ONDD_SED_CMDS += s|%INTERNALDIR%|$(call qstrip,$(BR2_STORAGE_PRIMARY))|;
 ONDD_SED_CMDS += s|%EXTERNALDIR%|$(call qstrip,$(BR2_STORAGE_SECONDARY))|;
 ONDD_SED_CMDS += s|%GROUP%|$(call qstrip,$(BR2_ONDD_GROUP))|;
 
-ifeq ($(BR2_ONDD_BUILD),y)
+ifeq ($(BR2_ONDD_INSTALL_BUILD),y)
+ONDD_SITE = $(call qstrip,$(BR2_ONDD_SRCDIR))
+ONDD_SITE_METHOD = local
+ONDD_PATCH += $(wildcard $(call epkgdir,ondd)/srcpatch/*.patch)
 ONDD_DEPENDENCIES = openssl
 
 define ONDD_INSTALL_TARGET_CMDS
@@ -27,11 +28,25 @@ endef
 
 else
 
+ifeq ($(BR2_ONDD_INSTALL_LOCAL),y)
+
+ONDD_SITE = $(BR2_EXTERNAL)/package/ondd/src
+ONDD_SITE_METHOD = local
 define ONDD_INSTALL_TARGET_CMDS
-	$(INSTALL) -Dm0644 $(@D)/LICENSE $(TARGET_DIR)/opt/licenses/ondd/LICENSE
+	$(INSTALL) -Dm644 $(@D)/LICENSE $(TARGET_DIR)/opt/licenses/ondd/LICENSE
 endef
 
-endif
+else
+
+ONDD_SOURCE = ondd-arm-$(ONDD_VERSION).tar.gz
+ONDD_SITE = https://archive.outernet.is/sources
+define ONDD_INSTALL_TARGET_CMDS
+	$(INSTALL) -Dm644 $(@D)/LICENSE $(TARGET_DIR)/opt/licenses/ondd/LICENSE
+	$(INSTALL) -Dm755 $(@D)/ondd $(TARGET_DIR)/usr/sbin/ondd
+endef
+
+endif # BR2_ONDD_INSTALL_LOCAL
+endif # BR2_ONDD_INSTALL_BUILD
 
 define ONDD_INSTALL_INIT_SYSV
 	$(INSTALL) -Dm644 $(call epkgdir,ondd)/ondd.conf \
