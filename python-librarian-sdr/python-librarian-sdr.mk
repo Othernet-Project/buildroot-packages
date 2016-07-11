@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PYTHON_LIBRARIAN_SDR_VERSION = e791d6feea4c4d5095cb725c50760f6382dd4813
+PYTHON_LIBRARIAN_SDR_VERSION = v1.0
 PYTHON_LIBRARIAN_SDR_SITE = $(call github,Outernet-Project,librarian-SDR,$(PYTHON_LIBRARIAN_SDR_VERSION))
 PYTHON_LIBRARIAN_SDR_LICENSE = GPLv3+
 PYTHON_LIBRARIAN_SDR_LICENSE_FILES = COPYING
