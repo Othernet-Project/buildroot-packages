@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PYTHON_LFTP_VERSION = c2d4bf3edc850210848d54c2f0ffd6de87cd9685
+PYTHON_LFTP_VERSION = v1.1
 PYTHON_LFTP_SITE = $(call github,Outernet-Project,lftp,$(PYTHON_LFTP_VERSION))
 PYTHON_LFTP_LICENSE = GPLv3
 PYTHON_LFTP_LICENSE_FILES = COPYING

@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PYTHON_SQLIZE_PG_VERSION = 8f1356d5a8456f94a8838db82a9996ff316ca720
+PYTHON_SQLIZE_PG_VERSION = v1.0
 PYTHON_SQLIZE_PG_SITE = $(call github,Outernet-Project,sqlize-pg,$(PYTHON_SQLIZE_PG_VERSION))
 PYTHON_SQLIZE_PG_LICENSE = GPLv3+
 PYTHON_SQLIZE_PG_LICENSE_FILES = COPYING
