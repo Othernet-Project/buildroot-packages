@@ -9,7 +9,7 @@ PYTHON_PSYCOPG2_SOURCE = psycopg2-$(PYTHON_PSYCOPG2_VERSION).tar.gz
 PYTHON_PSYCOPG2_SITE = https://pypi.python.org/packages/source/p/psycopg2
 PYTHON_PSYCOPG2_LICENSE = LGPL
 PYTHON_PSYCOPG2_LICENSE_FILES = LICENSE
-PYTHON_PSYCOPG2_DEPENDENCIES = postgresql
+PYTHON_PSYCOPG2_DEPENDENCIES = postgresql-95
 PYTHON_PSYCOPG2_SETUP_TYPE = distutils
 
 # Override build command to pass custom command line arguments to build_ext
