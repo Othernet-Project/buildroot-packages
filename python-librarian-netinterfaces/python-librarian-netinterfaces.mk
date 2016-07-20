@@ -15,7 +15,7 @@ PYTHON_LIBRARIAN_NETINTERFACES_AP_RESTART_CMD = $(call qstrip,$(BR2_PYTHON_LIBRA
 define PYTHON_LIBRARIAN_NETINTERFACES_INSTALL_CONF
 	$(INSTALL) -Dm644 $(call epkgdir,python-librarian-netinterfaces)/netinterfaces.ini \
 		$(TARGET_DIR)/etc/librarian.d/netinterfaces.ini
-	$(SED) 's|%RESTART_CMD%|$(PYTHON_LIBRARIAN_NETINTERFACES_INSTALL_CONF)' \
+	$(SED) 's|%RESTART_CMD%|$(PYTHON_LIBRARIAN_NETINTERFACES_AP_RESTART_CMD)|' \
 		$(TARGET_DIR)/etc/librarian.d/netinterfaces.ini
 endef
 
