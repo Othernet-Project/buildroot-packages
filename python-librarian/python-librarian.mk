@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PYTHON_LIBRARIAN_VERSION = 86b7cc6a2a4e0699578b9affd27d0c1bcef583e2
+PYTHON_LIBRARIAN_VERSION = 1e6da696b04e4c84bafd9329e8d2e1a12adf9a37
 PYTHON_LIBRARIAN_SITE = $(call github,Outernet-Project,librarian,$(PYTHON_LIBRARIAN_VERSION))
 PYTHON_LIBRARIAN_LICENSE = GPLv3+
 PYTHON_LIBRARIAN_LICENSE_FILES = COPYING
