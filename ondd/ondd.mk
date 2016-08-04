@@ -9,6 +9,7 @@ ONDD_LICENSE = OFL
 ONDD_LICENSE_FILE = LICENSE
 
 ONDD_SED_CMDS += s|%CACHEDIR%|$(call qstrip,$(BR2_ONDD_CACHEDIR))|;
+ONDD_SED_CMDS += s|%CONFIGFILE%|$(call qstrip,$(BR2_ONDD_CONFIGFILE))|;
 ONDD_SED_CMDS += s|%INTERNALDIR%|$(call qstrip,$(BR2_STORAGE_PRIMARY))|;
 ONDD_SED_CMDS += s|%EXTERNALDIR%|$(call qstrip,$(BR2_STORAGE_SECONDARY))|;
 ONDD_SED_CMDS += s|%GROUP%|$(call qstrip,$(BR2_ONDD_GROUP))|;
@@ -19,9 +20,12 @@ ONDD_SITE_METHOD = local
 ONDD_PATCH += $(wildcard $(call epkgdir,ondd)/srcpatch/*.patch)
 ONDD_DEPENDENCIES = openssl
 
+ifeq ($(BR2_ONDD_LED_CONTROL),y)
+ONDD_MAKE_FLAGS = LED_CONTROL=on
+endif
+
 define ONDD_INSTALL_TARGET_CMDS
-	$(MAKE) -C $(@D) INSTALL_PREFIX=$(TARGET_DIR) \
-		CFLAGS=-fpermissive \
+	$(MAKE) -C $(@D) $(ONDD_MAKE_FLAGS) INSTALL_PREFIX=$(TARGET_DIR) \
 		CC=$(TARGET_CC) clean debug release install
 	$(ONDD_INSTALL_CONF)
 endef

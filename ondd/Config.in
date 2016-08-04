@@ -9,11 +9,17 @@ menuconfig BR2_PACKAGE_ONDD
 if BR2_PACKAGE_ONDD
 
 config BR2_ONDD_CACHEDIR
-    string "Download cache directory"
+	string "Download cache directory"
 	default "/mnt/cache"
 	help
 	  Temporary storage directory where ONDD will
 	  store partial downloads.
+
+config BR2_ONDD_CONFIGFILE
+	string "Path to ondd config file"
+	default "/etc/ondd.conf"
+	help
+	  ONDD stores and loads it's configuration from this file.
 
 config BR2_ONDD_GROUP
 	string "Group to use for the download directories"
@@ -52,6 +58,12 @@ config BR2_ONDD_SRCDIR
 	string "ONDD source directory"
 	help
 	  Path to ONDD sources.
+
+config BR2_ONDD_LED_CONTROL
+	bool "Enable ONDD LED control"
+	help
+	  If this option is disabled, the code that performs led control
+	  will be excluded during compilation.
 
 endif # BR2_ONDD_INSTALL_BUILD
 
