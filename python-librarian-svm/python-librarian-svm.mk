@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PYTHON_LIBRARIAN_SVM_VERSION = 5bc0bdadc1222fb62eb48a181ceb54440c43aef3
+PYTHON_LIBRARIAN_SVM_VERSION = 2bbea728fbdd30d3ff5565acc954245e118ed2a5
 PYTHON_LIBRARIAN_SVM_SITE = $(call github,Outernet-Project,librarian-svm,$(PYTHON_LIBRARIAN_SVM_VERSION))
 PYTHON_LIBRARIAN_SVM_LICENSE = GPLv3+
 PYTHON_LIBRARIAN_SVM_LICENSE_FILES = COPYING
