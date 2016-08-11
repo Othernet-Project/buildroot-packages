@@ -1,0 +1,23 @@
+menuconfig BR2_PACKAGE_PYTHON_LIBRARIAN_SVM
+	bool "python-librarian-svm"
+	depends on (BR2_PACKAGE_PYTHON || BR2_PACKAGE_PYTHON3) && BR2_PACKAGE_PYTHON_LIBRARIAN
+	select BR2_PACKAGE_PYTHON_HWD
+	help
+	  Add new and manage existing overlay images.
+
+	  https://github.com/Outernet-Project/librarian-svm/
+
+if BR2_PACKAGE_PYTHON_LIBRARIAN_SVM
+
+config BR2_PYTHON_LIBRARIAN_SVM_STASHDIR
+	string "Directory where to store overlays"
+	default "/mnt/data/overlays"
+	help
+	  All new overlays that are uploaded, as well as those
+	  that are uninstalled are kept in this directory.
+
+endif # BR2_PACKAGE_PYTHON_LIBRARIAN_SVM
+
+
+comment "python-librarian-svm depends on python-librarian"
+	depends on !BR2_PACKAGE_PYTHON_LIBRARIAN
