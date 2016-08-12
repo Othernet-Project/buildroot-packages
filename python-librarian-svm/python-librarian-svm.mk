@@ -1,0 +1,23 @@
+################################################################################
+#
+# python-librarian-svm
+#
+################################################################################
+
+PYTHON_LIBRARIAN_SVM_VERSION = 2bbea728fbdd30d3ff5565acc954245e118ed2a5
+PYTHON_LIBRARIAN_SVM_SITE = $(call github,Outernet-Project,librarian-svm,$(PYTHON_LIBRARIAN_SVM_VERSION))
+PYTHON_LIBRARIAN_SVM_LICENSE = GPLv3+
+PYTHON_LIBRARIAN_SVM_LICENSE_FILES = COPYING
+PYTHON_LIBRARIAN_SVM_SETUP_TYPE = setuptools
+
+define PYTHON_LIBRARIAN_SVM_INSTALL_CONF
+	$(INSTALL) -Dm644 $(call epkgdir,python-librarian-sdr)/sdr.ini \
+		$(TARGET_DIR)/etc/librarian.d/sdr.ini
+endef
+
+ifeq ($(BR2_PACKAGE_PYTHON_LIBRARIAN_SVM),y)
+LIBRARIAN_COMPONENTS += librarian_svm
+TARGET_FINALIZE_HOOKS += PYTHON_LIBRARIAN_SVM_INSTALL_CONF
+endif
+
+$(eval $(python-package))
