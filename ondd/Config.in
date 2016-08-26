@@ -9,11 +9,17 @@ menuconfig BR2_PACKAGE_ONDD
 if BR2_PACKAGE_ONDD
 
 config BR2_ONDD_CACHEDIR
-    string "Download cache directory"
+	string "Download cache directory"
 	default "/mnt/cache"
 	help
 	  Temporary storage directory where ONDD will
 	  store partial downloads.
+
+config BR2_ONDD_CONFIGFILE
+	string "Path to ondd config file"
+	default "/etc/ondd.conf"
+	help
+	  ONDD stores and loads it's configuration from this file.
 
 config BR2_ONDD_GROUP
 	string "Group to use for the download directories"
@@ -21,14 +27,44 @@ config BR2_ONDD_GROUP
 	help
 	  The download directories will be owned by this group.
 
-comment "This package only installs the init script. To compile "
-comment "from source, you need access to the source code repository "
-comment "and you need to enable the following option."
-config BR2_ONDD_BUILD
-	bool "Install ONDD from source"
-	help
-	  ONDD is closed source. This option allows developers
-	  with access to source code to perform installation
-	  from source.
+choice BR2_ONDD_INSTALL_METHOD
+	prompt "ONDD install method"
+	default BR2_ONDD_INSTALL_LOCAL
 
-endif
+config BR2_ONDD_INSTALL_LOCAL
+	bool "do not install"
+	help
+	  ONDD binary will be installed separately, and only
+	  its LICENSE file will be installed through this
+	  package.
+
+config BR2_ONDD_INSTALL_TARBALL
+	bool "from hosted tarball"
+	help
+	  ONDD will be installed from a hosted tarball on
+	  archive.outernet.is.
+
+config BR2_ONDD_INSTALL_BUILD
+	bool "from source"
+	help
+	  ONDD will be installed by building from local
+	  source tree.
+
+endchoice
+
+if BR2_ONDD_INSTALL_BUILD
+
+config BR2_ONDD_SRCDIR
+	string "ONDD source directory"
+	help
+	  Path to ONDD sources.
+
+config BR2_ONDD_LED_CONTROL
+	bool "Enable ONDD LED control"
+	help
+	  If this option is disabled, the code that performs led control
+	  will be excluded during compilation.
+
+endif # BR2_ONDD_INSTALL_BUILD
+
+endif # BR2_PACKAGE_ONDD

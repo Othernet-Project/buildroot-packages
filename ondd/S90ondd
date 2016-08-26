@@ -1,10 +1,20 @@
 #!/bin/sh
 
 PID_FILE=/var/run/ondd.pid
+SDR_SOCKET_PATH=/var/run/ondd.data
 CACHE_PATH=%CACHEDIR%
+CONFIG_FILE=%CONFIGFILE%
 MAIN_STORAGE=%INTERNALDIR%
 EXT_STORAGE=%EXTERNALDIR%
 ONDD_GROUP=%GROUP%
+ONDD_TIMEOUT_HANDLER=/usr/sbin/ontimeout
+ONDD_EXTRA_ARGS=
+
+. /etc/conf.d/ondd
+
+if [ -x "$ONDD_TIMEOUT_HANDLER" ]; then
+  ONDD_EXTRA_ARGS="$ONDD_EXTRA_ARGS --sdr-timeout-handler $ONDD_TIMEOUT_HANDLER"
+fi
 
 start() {
   mkdir -p "$CACHE_PATH"
@@ -21,8 +31,10 @@ start() {
     output_path=$MAIN_STORAGE
   fi
 
+  ondd_args="-d --pid-file $PID_FILE --cfg-file $CONFIG_FILE -c $CACHE_PATH -o $output_path -D $SDR_SOCKET_PATH $ONDD_EXTRA_ARGS"
+
   printf "Starting ondd: "
-  start-stop-daemon -S -q -p $PID_FILE --exec /usr/sbin/ondd -- -d --pid-file $PID_FILE -c $CACHE_PATH -o $output_path
+  start-stop-daemon -S -q -p $PID_FILE --exec /usr/sbin/ondd -- $ondd_args
   if [ $? ]; then
     echo "OK"
   else

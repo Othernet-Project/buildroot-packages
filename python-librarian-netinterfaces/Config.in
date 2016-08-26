@@ -1,0 +1,25 @@
+menuconfig BR2_PACKAGE_PYTHON_LIBRARIAN_NETINTERFACES
+	bool "python-librarian-netinterfaces"
+	depends on (BR2_PACKAGE_PYTHON || BR2_PACKAGE_PYTHON3) && BR2_PACKAGE_PYTHON_LIBRARIAN
+	select BR2_PACKAGE_PYTHON_HWD
+	select BR2_PACKAGE_PYTHON_PYHOSTAPDCONF
+	help
+	  List and manage network interfaces from librarian.
+
+	  https://github.com/Outernet-Project/librarian-netinterfaces/
+
+if BR2_PACKAGE_PYTHON_LIBRARIAN_NETINTERFACES
+
+config BR2_PYTHON_LIBRARIAN_NETINTERFACES_AP_RESTART_CMD
+	string "Command to restart hostapd"
+	default "service hostapd restart"
+	help
+	  Command that will be triggered by
+	  librarian-netinterfaces to restart hostad
+	  and apply its settings.
+
+endif # BR2_PACKAGE_PYTHON_LIBRARIAN_NETINTERFACES
+
+
+comment "python-librarian-netinterfaces depends on python-librarian"
+	depends on !BR2_PACKAGE_PYTHON_LIBRARIAN

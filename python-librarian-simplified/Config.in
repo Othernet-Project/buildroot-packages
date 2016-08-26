@@ -1,0 +1,10 @@
+config BR2_PACKAGE_PYTHON_LIBRARIAN_SIMPLIFIED
+	bool "python-librarian-simplified"
+	depends on (BR2_PACKAGE_PYTHON || BR2_PACKAGE_PYTHON3) && BR2_PACKAGE_PYTHON_LIBRARIAN
+	help
+	  Librarian simplified user interface with only a single view
+
+	  https://github.com/Outernet-Project/librarian-simplified/
+
+comment "python-librarian-simplified depends on python-librarian"
+	depends on !BR2_PACKAGE_PYTHON_LIBRARIAN
