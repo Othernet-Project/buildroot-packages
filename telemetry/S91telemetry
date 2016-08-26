@@ -9,7 +9,7 @@ case "$1" in
         [ -f $TELEMETRY_PID ] && exit 0
 
         printf "Starting telemetry: "
-        start-stop-daemon -S -q -p $TELEMETRY_PID -x $DAEMON &
+        start-stop-daemon -S -q -b -m -p $TELEMETRY_PID -x $DAEMON
         if [ $? = 0 ]
         then
             echo "OK"
@@ -20,8 +20,12 @@ case "$1" in
         ;;
     stop)
         printf "Stopping telemetry: "
-        start-stop-daemon -K -q -p $TELEMETRY_PID
-        [ $? = 0 ] && echo "OK" || echo "FAIL"
+        if start-stop-daemon -K --oknodo -p $TELEMETRY_PID > /dev/null; then
+            rm "$TELEMETRY_PID" 2>/dev/null
+            echo "OK"
+        else
+            echo "FAIL"
+        fi
         ;;
     restart|reload)
         $0 stop
