@@ -1,4 +1,4 @@
-menuconfig BR2_PACKAGE_TELEMETRY
+config BR2_PACKAGE_TELEMETRY
 	bool "telemetry"
 	depends on BR2_PACKAGE_PYTHON
 	help
