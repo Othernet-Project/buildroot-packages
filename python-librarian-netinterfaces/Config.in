@@ -12,7 +12,7 @@ if BR2_PACKAGE_PYTHON_LIBRARIAN_NETINTERFACES
 
 config BR2_PYTHON_LIBRARIAN_NETINTERFACES_AP_RESTART_CMD
 	string "Command to restart hostapd"
-	default "service hostapd restart"
+	default "reboot"
 	help
 	  Command that will be triggered by
 	  librarian-netinterfaces to restart hostad
