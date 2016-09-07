@@ -1,0 +1,10 @@
+config BR2_PACKAGE_PYTHON_LIBRARIAN_REMOTE
+	bool "python-librarian-remote"
+	depends on (BR2_PACKAGE_PYTHON || BR2_PACKAGE_PYTHON3) && BR2_PACKAGE_PYTHON_LIBRARIAN
+	help
+	  Remote SSH access setup tool
+
+	  https://github.com/Outernet-Project/librarian-remote/
+
+comment "python-librarian-remote depends on python-librarian"
+	depends on !BR2_PACKAGE_PYTHON_LIBRARIAN
