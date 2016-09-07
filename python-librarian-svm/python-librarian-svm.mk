@@ -11,8 +11,8 @@ PYTHON_LIBRARIAN_SVM_LICENSE_FILES = COPYING
 PYTHON_LIBRARIAN_SVM_SETUP_TYPE = setuptools
 
 define PYTHON_LIBRARIAN_SVM_INSTALL_CONF
-	$(INSTALL) -Dm644 $(call epkgdir,python-librarian-sdr)/sdr.ini \
-		$(TARGET_DIR)/etc/librarian.d/sdr.ini
+	$(INSTALL) -Dm644 $(call epkgdir,python-librarian-svm)/svm.ini \
+		$(TARGET_DIR)/etc/librarian.d/svm.ini
 endef
 
 ifeq ($(BR2_PACKAGE_PYTHON_LIBRARIAN_SVM),y)
