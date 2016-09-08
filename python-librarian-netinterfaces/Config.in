@@ -11,11 +11,11 @@ menuconfig BR2_PACKAGE_PYTHON_LIBRARIAN_NETINTERFACES
 if BR2_PACKAGE_PYTHON_LIBRARIAN_NETINTERFACES
 
 config BR2_PYTHON_LIBRARIAN_NETINTERFACES_AP_RESTART_CMD
-	string "Command to restart hostapd"
+	string "Command to restart network stack"
 	default "reboot"
 	help
 	  Command that will be triggered by
-	  librarian-netinterfaces to restart hostad
+	  librarian-netinterfaces to restart network stack
 	  and apply its settings.
 
 endif # BR2_PACKAGE_PYTHON_LIBRARIAN_NETINTERFACES
