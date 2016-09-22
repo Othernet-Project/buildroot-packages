@@ -26,7 +26,7 @@ endif
 
 define ONDD_INSTALL_TARGET_CMDS
 	$(MAKE) -C $(@D) $(ONDD_MAKE_FLAGS) INSTALL_PREFIX=$(TARGET_DIR) \
-		CC=$(TARGET_CC) clean debug release install
+		CC=$(TARGET_CC) STRIP=$(TARGET_STRIP) clean debug release install
 	$(ONDD_INSTALL_CONF)
 endef
 
