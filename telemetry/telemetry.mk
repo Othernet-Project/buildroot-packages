@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-TELEMETRY_VERSION = v0.92
+TELEMETRY_VERSION = v1.0
 TELEMETRY_SITE = $(call github,Outernet-Project,telemetry_client,$(TELEMETRY_VERSION))
 TELEMETRY_SETUP_TYPE = setuptools
 
