@@ -24,8 +24,8 @@ endef
 # so leave it the default. its only there so that the config var is available in other packages
 
 define INCRON_INSTALL_TARGET_CMDS
-	$(INSTALL) -Dm755 $(@D)/incrond $(TARGET_DIR)/sbin/incrond
-	$(INSTALL) -Dm755 $(TARGET) $(INSTALL_PREFIX)$(call qstrip,$(BR2_INCRON_CONFDIR)
+    $(INSTALL) -Dm755 $(@D)/incrond $(TARGET_DIR)/sbin/incrond
+    $(INSTALL) -m755 -d $(TARGET_DIR)$(call qstrip,$(BR2_INCRON_CONFDIR))
 endef
 
 $(eval $(generic-package))
