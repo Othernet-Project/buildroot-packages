@@ -1,0 +1,6 @@
+menuconfig BR2_PACKAGE_INCRON
+	bool "inotify cron daemon - cron for inotify events"
+	help
+	  incron - inotify cron watches for filesystem events and runs processes
+
+
