@@ -20,6 +20,7 @@ endef
 
 define INCRON_INSTALL_TARGET_CMDS
 	$(INSTALL) -Dm755 $(@D)/incrond $(TARGET_DIR)/sbin/incrond
+	$(INSTALL) -Dm755 $(TARGET) $(INSTALL_PREFIX)/etc/incron.d/
 endef
 
 $(eval $(generic-package))
