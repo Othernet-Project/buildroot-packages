@@ -12,7 +12,7 @@ INCRON_LICENSE_FILES = COPYING
 
 define INCRON_BUILD_CMDS
     $(TARGET_MAKE_ENV) \
-    CFLAGS="$(TARGET_CFLAGS) \
+    CFLAGS="$(TARGET_CFLAGS)" \
     LDFLAGS="$(TARGET_LDFLAGS)" \
     CXX="$(TARGET_CC)" \
     $(MAKE) -C $(@D) clean incrond
