@@ -4,3 +4,12 @@ menuconfig BR2_PACKAGE_INCRON
 	  incron - inotify cron watches for filesystem events and runs processes
 
 
+if BR2_PACKAGE_INCRON
+
+config BR2_INCRON_CONFDIR
+    string "incron config dir"
+    default "/etc/incron.d"
+    help
+      Absolute path to a directory to be watched for watch config. DO NOT CHANGE, stuff will break.
+
+endif
