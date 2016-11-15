@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-ONDD_VERSION = 2.2.2
+ONDD_VERSION = 2.5.0
 ONDD_LICENSE = OFL
 ONDD_LICENSE_FILE = LICENSE
 
