@@ -1,0 +1,7 @@
+config BR2_PACKAGE_RTL8723DS_NTC
+	bool "rtl8723ds ntc version"
+	depends on BR2_LINUX_KERNEL
+	help
+	  Linux kernel module for the rtl8723ds SDIO WiFi module.
+
+	  https://github.com/NextThingCo/RTL8723DS
