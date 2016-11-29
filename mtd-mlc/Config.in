@@ -1,0 +1,163 @@
+config BR2_PACKAGE_MTD_MLC
+	bool "mtd, jffs2 and ubi/ubifs tools"
+	help
+	  Build mtd, jffs2 and ubi/ubifs tools
+
+	  http://www.linux-mtd.infradead.org/
+
+if BR2_PACKAGE_MTD_MLC
+comment "MTD tools selection"
+
+config BR2_PACKAGE_MTD_MLC_DOCFDISK
+	bool "docfdisk"
+
+config BR2_PACKAGE_MTD_MLC_DOC_LOADBIOS
+	bool "doc_loadbios"
+
+config BR2_PACKAGE_MTD_MLC_FLASHCP
+	bool "flashcp"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_FLASH_ERASE
+	bool "flash_erase"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_FLASH_LOCK
+	bool "flash_lock"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_FLASH_OTP_DUMP
+	bool "flash_otp_dump"
+
+config BR2_PACKAGE_MTD_MLC_FLASH_OTP_INFO
+	bool "flash_otp_info"
+
+config BR2_PACKAGE_MTD_MLC_FLASH_OTP_LOCK
+	bool "flash_otp_lock"
+
+config BR2_PACKAGE_MTD_MLC_FLASH_OTP_WRITE
+	bool "flash_otp_write"
+
+config BR2_PACKAGE_MTD_MLC_FLASH_UNLOCK
+	bool "flash_unlock"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_FTL_CHECK
+	bool "ftl_check"
+
+config BR2_PACKAGE_MTD_MLC_FTL_FORMAT
+	bool "ftl_format"
+
+config BR2_PACKAGE_MTD_MLC_JFFS2DUMP
+	bool "jffs2dump"
+
+config BR2_PACKAGE_MTD_MLC_MKFSJFFS2
+	bool "mkfs.jffs2"
+	select BR2_PACKAGE_ZLIB
+	select BR2_PACKAGE_LZO
+
+config BR2_PACKAGE_MTD_MLC_MKFSUBIFS
+	bool "mkfs.ubifs"
+	select BR2_PACKAGE_ZLIB
+	select BR2_PACKAGE_LZO
+	select BR2_PACKAGE_UTIL_LINUX
+	select BR2_PACKAGE_UTIL_LINUX_LIBUUID
+	depends on BR2_USE_WCHAR # util-linux
+
+comment "mkfs.ubifs needs a toolchain w/ wchar"
+	depends on !BR2_USE_WCHAR
+
+config BR2_PACKAGE_MTD_MLC_MTD_DEBUG
+	bool "mtd_debug"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_NANDDUMP
+	bool "nanddump"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_NANDTEST
+	bool "nandtest"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_NANDWRITE
+	bool "nandwrite"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_NFTLDUMP
+	bool "nftldump"
+
+config BR2_PACKAGE_MTD_MLC_NFTL_FORMAT
+	bool "nftl_format"
+
+config BR2_PACKAGE_MTD_MLC_RECV_IMAGE
+	bool "recv_image"
+
+config BR2_PACKAGE_MTD_MLC_RFDDUMP
+	bool "rfddump"
+
+config BR2_PACKAGE_MTD_MLC_RFDFORMAT
+	bool "rfdformat"
+
+config BR2_PACKAGE_MTD_MLC_SERVE_IMAGE
+	bool "serve_image"
+
+config BR2_PACKAGE_MTD_MLC_SUMTOOL
+	bool "sumtool"
+
+config BR2_PACKAGE_MTD_MLC_MTDINFO
+	bool "mtdinfo"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_UBIATTACH
+	bool "ubiattach"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_UBICRC32
+	bool "ubicrc32"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_UBIDETACH
+	bool "ubidetach"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_UBIFORMAT
+	bool "ubiformat"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_UBIMKVOL
+	bool "ubimkvol"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_UBINFO
+	bool "ubinfo"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_UBINIZE
+	bool "ubinize"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_UBIRENAME
+	bool "ubirename"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_UBIRMVOL
+	bool "ubirmvol"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_UBIRSVOL
+	bool "ubirsvol"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_UBIUPDATEVOL
+	bool "ubiupdatevol"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_UBIBLOCK
+	bool "ubiblock"
+	default y
+
+config BR2_PACKAGE_MTD_MLC_UBIHEALTHD
+	bool "ubihealthd"
+	default y
+
+endif

@@ -1,0 +1,6 @@
+config BR2_PACKAGE_HOST_MTD_MLC
+	bool "host mtd, jffs2 and ubi/ubifs tools"
+	help
+	  Build mtd, jffs2 and ubi/ubifs tools
+
+	  http://www.linux-mtd.infradead.org/
