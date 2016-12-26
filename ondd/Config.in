@@ -10,7 +10,7 @@ if BR2_PACKAGE_ONDD
 
 config BR2_ONDD_CACHEDIR
 	string "Download cache directory"
-	default "/mnt/cache"
+	default "/mnt/downloads/.cache"
 	help
 	  Temporary storage directory where ONDD will
 	  store partial downloads.
