@@ -1,0 +1,7 @@
+config BR2_PACKAGE_MT7601APSTA
+	bool "mt7601apsta"
+	depends on BR2_LINUX_KERNEL
+	help
+	  Linux kernel module for the mt7601 non-kernel AP+STA module
+
+	  https://github.com/Outernet-Project/mt7601u
