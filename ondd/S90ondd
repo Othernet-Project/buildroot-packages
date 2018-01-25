@@ -1,29 +1,17 @@
 #!/bin/sh
 
 PID_FILE=/var/run/ondd.pid
-SDR_SOCKET_PATH=/var/run/ondd.data
+SDR_SOCKET_PATH=/tmp/demod.socks.000
 CACHE_PATH=%CACHEDIR%
 CONFIG_FILE=%CONFIGFILE%
 ONDD_GROUP=%GROUP%
-ONDD_TIMEOUT_HANDLER=/usr/sbin/ontimeout
-ONDD_PACKET_PING=/sys/devices/platform/leds/leds/packet
 ONDD_EXTRA_ARGS=
 
 . /etc/conf.d/ondd
 
-if [ -x "$ONDD_TIMEOUT_HANDLER" ]; then
-  ONDD_EXTRA_ARGS="$ONDD_EXTRA_ARGS --sdr-timeout-handler $ONDD_TIMEOUT_HANDLER"
-fi
-
-if [ -d "$ONDD_PACKET_PING" ]; then
-    echo transient > "${ONDD_PACKET_PING}/trigger"
-    echo 1 > "${ONDD_PACKET_PING}/duration"
-    echo 1 > "${ONDD_PACKET_PING}/state"
-fi
-
 start() {
   mkdir -p "$CACHE_PATH"
-  ondd_args="-d --pid-file $PID_FILE --cfg-file $CONFIG_FILE -c $CACHE_PATH -o /mnt/downloads -D $SDR_SOCKET_PATH $ONDD_EXTRA_ARGS"
+  ondd_args="-d -l --pid-file $PID_FILE --cfg-file $CONFIG_FILE -c $CACHE_PATH -o /mnt/downloads -D $SDR_SOCKET_PATH $ONDD_EXTRA_ARGS"
 
   printf "Starting ondd: "
   start-stop-daemon -S -q -p $PID_FILE --exec /usr/sbin/ondd -- $ondd_args
