@@ -6,7 +6,7 @@
 
 PKGTOOL_VERSION = v0.5.0
 PKGTOOL_SOURCE = $(PKGTOOL_VERSION).tar.gz
-PKGTOOL_SITE = https://github.com/Outernet-Project/tools-pkg/archive
+PKGTOOL_SITE = https://github.com/Othernet-Project/tools-pkg/archive
 PKGTOOL_DEPENDENCIES = openssl
 PKGTOOL_LICENSE = PROPRIETARY
 

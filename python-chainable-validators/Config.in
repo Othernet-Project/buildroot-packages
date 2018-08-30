@@ -4,4 +4,4 @@ config BR2_PACKAGE_PYTHON_CHAINABLE_VALIDATORS
 	help
 	  Library for writing chainable validation functions.
 
-	  https://github.com/Outernet-Project/chainable-validators
+	  https://github.com/Othernet-Project/chainable-validators

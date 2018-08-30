@@ -32,4 +32,4 @@ config BR2_PACKAGE_PYTHON_LIBRARIAN
 	help
 	  Content library manager for Outernet Receiver
 
-	  https://github.com/Outernet-Project/librarian/
+	  https://github.com/Othernet-Project/librarian/

@@ -5,7 +5,7 @@
 ################################################################################
 
 PYTHON_LIBRARIAN_REMOTE_VERSION = 1cb070691b12d871d86b95fcfb4afcb93c24c554
-PYTHON_LIBRARIAN_REMOTE_SITE = $(call github,Outernet-Project,librarian-remote,$(PYTHON_LIBRARIAN_REMOTE_VERSION))
+PYTHON_LIBRARIAN_REMOTE_SITE = $(call github,Othernet-Project,librarian-remote,$(PYTHON_LIBRARIAN_REMOTE_VERSION))
 PYTHON_LIBRARIAN_REMOTE_LICENSE = GPLv3+
 PYTHON_LIBRARIAN_REMOTE_LICENSE_FILES = COPYING
 PYTHON_LIBRARIAN_REMOTE_SETUP_TYPE = setuptools

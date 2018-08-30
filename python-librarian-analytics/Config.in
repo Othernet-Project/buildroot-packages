@@ -6,7 +6,7 @@ config BR2_PACKAGE_PYTHON_LIBRARIAN_ANALYTICS
 	help
 	  Librarian content usage analytics
 
-	  https://github.com/Outernet-Project/librarian-analytics/
+	  https://github.com/Othernet-Project/librarian-analytics/
 
 comment "python-librarian-analytics depends on python-librarian"
 	depends on !BR2_PACKAGE_PYTHON_LIBRARIAN

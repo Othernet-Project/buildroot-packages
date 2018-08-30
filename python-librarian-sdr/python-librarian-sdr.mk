@@ -5,7 +5,7 @@
 ################################################################################
 
 PYTHON_LIBRARIAN_SDR_VERSION = v1.0
-PYTHON_LIBRARIAN_SDR_SITE = $(call github,Outernet-Project,librarian-SDR,$(PYTHON_LIBRARIAN_SDR_VERSION))
+PYTHON_LIBRARIAN_SDR_SITE = $(call github,Othernet-Project,librarian-SDR,$(PYTHON_LIBRARIAN_SDR_VERSION))
 PYTHON_LIBRARIAN_SDR_LICENSE = GPLv3+
 PYTHON_LIBRARIAN_SDR_LICENSE_FILES = COPYING
 PYTHON_LIBRARIAN_SDR_SETUP_TYPE = setuptools

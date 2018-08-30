@@ -5,7 +5,7 @@
 ################################################################################
 
 PYTHON_FSAL_VERSION = e700852c88bcff15291355645b1612e9cd039c80
-PYTHON_FSAL_SITE = $(call github,Outernet-Project,fsal,$(PYTHON_FSAL_VERSION))
+PYTHON_FSAL_SITE = $(call github,Othernet-Project,fsal,$(PYTHON_FSAL_VERSION))
 PYTHON_FSAL_LICENSE = GPLv3+
 PYTHON_FSAL_LICENSE_FILES = COPYING
 PYTHON_FSAL_SETUP_TYPE = setuptools

@@ -5,7 +5,7 @@ config BR2_PACKAGE_PYTHON_LIBRARIAN_SVM
 	  Software version manager manages the rootfs overlays
 	  on supported platforms (e.g., rxOS).
 
-	  https://github.com/Outernet-Project/librarian-svm/
+	  https://github.com/Othernet-Project/librarian-svm/
 
 comment "python-librarian-svm depends on python-librarian"
 	depends on !BR2_PACKAGE_PYTHON_LIBRARIAN

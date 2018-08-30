@@ -6,4 +6,4 @@ config BR2_PACKAGE_PYTHON_ONDD_IPC
 	help
 	  ONDD IPC library
 
-	  https://github.com/Outernet-Project/ondd-ipc/
+	  https://github.com/Othernet-Project/ondd-ipc/

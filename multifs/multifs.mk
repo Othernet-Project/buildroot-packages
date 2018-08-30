@@ -5,7 +5,7 @@
 ################################################################################
 
 MULTIFS_VERSION = v0.3
-MULTIFS_SITE = $(call github,Outernet-Project,multifs,$(MULTIFS_VERSION))
+MULTIFS_SITE = $(call github,Othernet-Project,multifs,$(MULTIFS_VERSION))
 MULTIFS_LICENSE = GPLv3+
 MULTIFS_LICENSE_FILES = COPYING
 

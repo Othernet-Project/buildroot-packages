@@ -4,4 +4,4 @@ config BR2_PACKAGE_RTL8192CU_APSTA
 	help
 	  Linux kernel module for the rtl8192cu/rtl8188cu AP+STA module
 
-	  https://github.com/Outernet-Project/rtl8192cu-fixes
+	  https://github.com/Othernet-Project/rtl8192cu-fixes

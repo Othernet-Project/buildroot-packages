@@ -5,7 +5,7 @@
 ################################################################################
 
 MT7601APSTA_VERSION = 86d78053b835ad9a0757ff0b01abc7a72e0c358f
-MT7601APSTA_SITE = $(call github,Outernet-Project,mt7601u,$(MT7601APSTA_VERSION))
+MT7601APSTA_SITE = $(call github,Othernet-Project,mt7601u,$(MT7601APSTA_VERSION))
 MT7601APSTA_LICENSE = GPLv2+
 MT7601APSTA_DEPENDENCIES = linux
 MT7601APSTA_KVER = $(LINUX_VERSION_PROBED)

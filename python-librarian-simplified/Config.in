@@ -4,7 +4,7 @@ config BR2_PACKAGE_PYTHON_LIBRARIAN_SIMPLIFIED
 	help
 	  Librarian simplified user interface with only a single view
 
-	  https://github.com/Outernet-Project/librarian-simplified/
+	  https://github.com/Othernet-Project/librarian-simplified/
 
 comment "python-librarian-simplified depends on python-librarian"
 	depends on !BR2_PACKAGE_PYTHON_LIBRARIAN

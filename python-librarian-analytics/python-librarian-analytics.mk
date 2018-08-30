@@ -5,7 +5,7 @@
 ################################################################################
 
 PYTHON_LIBRARIAN_ANALYTICS_VERSION = v2.0
-PYTHON_LIBRARIAN_ANALYTICS_SITE = $(call github,Outernet-Project,librarian-analytics,$(PYTHON_LIBRARIAN_ANALYTICS_VERSION))
+PYTHON_LIBRARIAN_ANALYTICS_SITE = $(call github,Othernet-Project,librarian-analytics,$(PYTHON_LIBRARIAN_ANALYTICS_VERSION))
 PYTHON_LIBRARIAN_ANALYTICS_LICENSE = GPLv3+
 PYTHON_LIBRARIAN_ANALYTICS_LICENSE_FILES = COPYING
 PYTHON_LIBRARIAN_ANALYTICS_SETUP_TYPE = setuptools

@@ -17,7 +17,7 @@ LIGHTTPD_CUSTOM_CONF_OPTS = \
 
 MOD_MULTIALIAS_VERSION = 6fb62ee4e5915cc866b404280ee8e0467a21e209
 MOD_MULTIALIAS_SOURCE = $(MOD_MULTIALIAS_VERSION).tar.gz
-MOD_MULTIALIAS_SITE = https://github.com/Outernet-Project/lighttpd-mod-multialias/archive
+MOD_MULTIALIAS_SITE = https://github.com/Othernet-Project/lighttpd-mod-multialias/archive
 MOD_MULTIALIAS_URL = $(MOD_MULTIALIAS_SITE)/$(MOD_MULTIALIAS_SOURCE)
 
 ifeq ($(BR2_PACKAGE_LIGHTTPD_CUSTOM_OPENSSL),y)

@@ -5,7 +5,7 @@
 ################################################################################
 
 INCRON_VERSION = master
-INCRON_SITE = $(call github,Outernet-Project,incron,$(INCRON_VERSION))
+INCRON_SITE = $(call github,Othernet-Project,incron,$(INCRON_VERSION))
 INCRON_LICENSE = GPLv2
 INCRON_LICENSE_FILES = COPYING
 

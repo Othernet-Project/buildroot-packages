@@ -6,7 +6,7 @@ menuconfig BR2_PACKAGE_PYTHON_LIBRARIAN_NETINTERFACES
 	help
 	  List and manage network interfaces from librarian.
 
-	  https://github.com/Outernet-Project/librarian-netinterfaces/
+	  https://github.com/Othernet-Project/librarian-netinterfaces/
 
 
 comment "python-librarian-netinterfaces depends on python-librarian"

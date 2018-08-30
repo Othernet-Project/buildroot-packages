@@ -6,7 +6,7 @@ menuconfig BR2_PACKAGE_PYTHON_LFTP
 	help
 	  Librarian FTP server
 
-	  https://github.com/Outernet-Project/lftp/
+	  https://github.com/Othernet-Project/lftp/
 
 comment "python-lftp depends on python-librarian"
 	depends on !BR2_PACKAGE_PYTHON_LIBRARIAN

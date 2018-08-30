@@ -5,7 +5,7 @@
 ################################################################################
 
 MTD_MLC_VERSION = f6a16e575091ef315b147532ba818877fd2c1895
-MTD_MLC_SITE = $(call github,Outernet-Project,CHIP-mtd-utils,$(MTD_MLC_VERSION))
+MTD_MLC_SITE = $(call github,Othernet-Project,CHIP-mtd-utils,$(MTD_MLC_VERSION))
 MTD_MLC_LICENSE = GPLv2
 MTD_MLC_LICENSE_FILES = COPYING
 

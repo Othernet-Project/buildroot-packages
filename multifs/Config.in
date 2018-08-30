@@ -5,4 +5,4 @@ config BR2_PACKAGE_MULTIFS
       Fuse filesystem that presents a merged view of 1 or more directories.
       The "merged" directories can be changed on the fly.
 
-	  https://github.com/Outernet-Project/multifs
+	  https://github.com/Othernet-Project/multifs

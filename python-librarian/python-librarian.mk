@@ -5,7 +5,7 @@
 ################################################################################
 
 PYTHON_LIBRARIAN_VERSION = develop
-PYTHON_LIBRARIAN_SITE = $(call github,Outernet-Project,librarian,$(PYTHON_LIBRARIAN_VERSION))
+PYTHON_LIBRARIAN_SITE = $(call github,Othernet-Project,librarian,$(PYTHON_LIBRARIAN_VERSION))
 PYTHON_LIBRARIAN_LICENSE = GPLv3+
 PYTHON_LIBRARIAN_LICENSE_FILES = COPYING
 PYTHON_LIBRARIAN_SETUP_TYPE = setuptools

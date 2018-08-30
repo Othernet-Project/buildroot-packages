@@ -4,7 +4,7 @@ config BR2_PACKAGE_PYTHON_LIBRARIAN_SDR
 	help
 	  SDR demodulator installation for Librarian
 
-	  https://github.com/Outernet-Project/librarian-sdr/
+	  https://github.com/Othernet-Project/librarian-sdr/
 
 comment "python-librarian-sdr depends on python-librarian"
 	depends on !BR2_PACKAGE_PYTHON_LIBRARIAN

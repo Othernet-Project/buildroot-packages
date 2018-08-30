@@ -4,4 +4,4 @@ config BR2_PACKAGE_MT7601APSTA
 	help
 	  Linux kernel module for the mt7601 non-kernel AP+STA module
 
-	  https://github.com/Outernet-Project/mt7601u
+	  https://github.com/Othernet-Project/mt7601u

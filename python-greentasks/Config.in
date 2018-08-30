@@ -5,4 +5,4 @@ config BR2_PACKAGE_PYTHON_GREENTASKS
 	help
 	  A very simplistic task scheduler built around gevent.
 
-	  https://github.com/Outernet-Project/greentasks/
+	  https://github.com/Othernet-Project/greentasks/

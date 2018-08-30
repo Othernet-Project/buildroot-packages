@@ -13,4 +13,4 @@ config BR2_PACKAGE_PYTHON_FSAL
 	help
 	  Librarian core
 
-	  https://github.com/Outernet-Project/librarian-core/
+	  https://github.com/Othernet-Project/librarian-core/

@@ -7,4 +7,4 @@ config BR2_PACKAGE_PYTHON_HWD
       hwd wraps around pyudev‘s Device objects to provide functionality
       specific to different types of hardware. 
 
-	  https://github.com/Outernet-Project/hwd
+	  https://github.com/Othernet-Project/hwd

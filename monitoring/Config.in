@@ -6,7 +6,7 @@ menuconfig BR2_PACKAGE_MONITORING
 	  Client-side script for sending Outernet signal monitoring data to a
 	  central server.
 	  
-	  https://github.com/Outernet-Project/monitoring
+	  https://github.com/Othernet-Project/monitoring
 
 
 if BR2_PACKAGE_MONITORING

@@ -5,4 +5,4 @@ config BR2_PACKAGE_TELEMETRY
 	  Client-side script for sending Outernet signal monitoring data to a
 	  central server.
 	  
-	  https://github.com/Outernet-Project/telemetry_client
+	  https://github.com/Othernet-Project/telemetry_client

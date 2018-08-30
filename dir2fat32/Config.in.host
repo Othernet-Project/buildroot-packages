@@ -7,4 +7,4 @@ config BR2_PACKAGE_HOST_DIR2FAT32
 	  Create a FAT32 disk image from the contents of a directory, without 
 	  mounting or root privileges, completely automatically.
 
-	  https://github.com/Outernet-Project/dir2fat32
+	  https://github.com/Othernet-Project/dir2fat32

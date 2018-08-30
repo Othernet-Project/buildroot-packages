@@ -6,4 +6,4 @@ config BR2_PACKAGE_PYTHON_DISENTANGLER
 	  returning an ordered tree with its nodes ordered from root towards
 	  leafs.
 
-	  https://github.com/Outernet-Project/disentangler
+	  https://github.com/Othernet-Project/disentangler
