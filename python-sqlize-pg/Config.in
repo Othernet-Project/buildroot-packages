@@ -4,4 +4,4 @@ config BR2_PACKAGE_PYTHON_SQLIZE_PG
 	help
 	  Fast SQL query builder for Python
 
-	  https://github.com/Outernet-project/sqlize
+	  https://github.com/Othernet-project/sqlize

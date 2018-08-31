@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-DIR2FAT32_VERSION = v2.0
+DIR2FAT32_VERSION = v2.1
 DIR2FAT32_SITE = $(call github,Othernet-Project,dir2fat32,$(DIR2FAT32_VERSION))
 DIR2FAT32_LICENSE = GPLv3+
 DIR2FAT32_LICENSE_FILES = COPYING

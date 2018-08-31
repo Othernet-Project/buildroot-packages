@@ -5,4 +5,4 @@ config BR2_PACKAGE_PYTHON_SQUERY_PG
 	help
 	  Ligthweight SQL database management library
 
-	  https://github.com/Outernet-project/squery-pg
+	  https://github.com/Othernet-project/squery-pg

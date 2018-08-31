@@ -6,7 +6,7 @@
 
 WPTDM_VERSION = 1.0.0
 WPTDM_SOURCE = wptdm-$(WPTDM_VERSION).tar.gz
-WPTDM_SITE = https://outernet.is
+WPTDM_SITE = https://othernet.is
 WPTDM_DEPENDENCIES = openssl libcurl
 WPTDM_LICENSE = PROPRIETARY
 

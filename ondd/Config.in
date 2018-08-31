@@ -2,9 +2,9 @@ menuconfig BR2_PACKAGE_ONDD
 	bool "ondd"
 	select BR2_PACKAGE_OPENSSL
 	help
-	  Outernet Data Delivery agent
+	  Othernet Data Delivery agent
 	  
-	  http://outernet.is/
+	  http://othernet.is/
 
 if BR2_PACKAGE_ONDD
 
@@ -42,7 +42,7 @@ config BR2_ONDD_INSTALL_TARBALL
 	bool "from hosted tarball"
 	help
 	  ONDD will be installed from a hosted tarball on
-	  archive.outernet.is.
+	  archive.othernet.is.
 
 config BR2_ONDD_INSTALL_BUILD
 	bool "from source"

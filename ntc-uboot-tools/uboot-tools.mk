@@ -6,7 +6,7 @@
 
 NTC_UBOOT_TOOLS_VERSION = 2016.01-c23364e
 NTC_UBOOT_TOOLS_SOURCE = u-boot-chip-$(NTC_UBOOT_TOOLS_VERSION).tar.gz
-NTC_UBOOT_TOOLS_SITE = https://archive.outernet.is/sources
+NTC_UBOOT_TOOLS_SITE = https://archive.othernet.is/sources
 NTC_UBOOT_TOOLS_LICENSE = GPLv2+
 NTC_UBOOT_TOOLS_LICENSE_FILES = Licenses/gpl-2.0.txt
 NTC_UBOOT_TOOLS_INSTALL_STAGING = YES

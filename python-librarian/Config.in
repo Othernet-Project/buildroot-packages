@@ -30,6 +30,6 @@ config BR2_PACKAGE_PYTHON_LIBRARIAN
 	select BR2_PACKAGE_PYTHON_SQLIZE_PG
 	select BR2_PACKAGE_PYTHON_WEBASSETS
 	help
-	  Content library manager for Outernet Receiver
+	  Content library manager for Othernet Receiver
 
 	  https://github.com/Othernet-Project/librarian/

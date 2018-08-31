@@ -41,7 +41,7 @@ endef
 else
 
 ONDD_SOURCE = ondd-arm-$(ONDD_VERSION).tar.gz
-ONDD_SITE = https://archive.outernet.is/sources
+ONDD_SITE = https://archive.othernet.is/sources
 define ONDD_INSTALL_TARGET_CMDS
 	$(INSTALL) -Dm644 $(@D)/LICENSE $(TARGET_DIR)/opt/licenses/ondd/LICENSE
 	$(INSTALL) -Dm755 $(@D)/ondd $(TARGET_DIR)/usr/sbin/ondd
@@ -56,7 +56,7 @@ define ONDD_INSTALL_INIT_SYSV
 	$(INSTALL) -Dm0755 $(call epkgdir,ondd)/S90ondd \
 		$(TARGET_DIR)/etc/init.d/S90ondd
 	$(SED) '$(ONDD_SED_CMDS)' $(TARGET_DIR)/etc/init.d/S90ondd
-	$(INSTALL) -Dm644 $(call epkgdir,ondd)/ca.crt $(TARGET_DIR)/etc/outernet/ca.crt
+	$(INSTALL) -Dm644 $(call epkgdir,ondd)/ca.crt $(TARGET_DIR)/etc/othernet/ca.crt
 endef
 
 $(eval $(generic-package))
