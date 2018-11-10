@@ -1,0 +1,13 @@
+diff --git a/Makefile b/Makefile
+index 649fff0..a02865d 100644
+--- a/Makefile
++++ b/Makefile
+@@ -326,7 +326,7 @@ strip:
+ 
+ install:
+ 	install -p -m 644 -D $(MODULE_NAME).ko $(MODDESTDIR)$(MODULE_NAME).ko
+-	$(DEPMOD)  -a ${KVER}
++	$(DEPMOD)  -a -b $(TARGET_DIR) $(KVER)
+ 	install rtl8723b_fw.bin -D $(FW_DIR)/rtl8723b_fw.bin
+ 
+ uninstall:
