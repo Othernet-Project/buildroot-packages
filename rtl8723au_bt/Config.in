@@ -1,0 +1,7 @@
+config BR2_PACKAGE_RTL8723AU_BT
+	bool "rtl8723au_bt"
+	depends on BR2_LINUX_KERNEL
+	help
+	  Linux kernel module for the rtl8723bu USB WiFi module - BLUEtooth support
+
+	  https://github.com/Othernet-Project/rtl8723au_bt
