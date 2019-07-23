@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-RTL8723BU_VERSION = db024b4c130283a0372d2f89a015a3a5c36f9419
+RTL8723BU_VERSION = a8bd4b6c0481479408e67ac2e1c6fd5dc499e37f
 RTL8723BU_SITE = $(call github,lwfinger,rtl8723bu,$(RTL8723BU_VERSION))
 RTL8723BU_LICENSE = GPLv2+
 RTL8723BU_DEPENDENCIES = linux
