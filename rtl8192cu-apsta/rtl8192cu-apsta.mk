@@ -4,8 +4,8 @@
 #
 ################################################################################
 
-RTL8192CU_APSTA_VERSION = fe5a5b4070b975fc0a216cbea44a4f707eb6d153
-RTL8192CU_APSTA_SITE = $(call github,Othernet-Project,rtl8192cu-fixes,$(RTL8192CU_APSTA_VERSION))
+RTL8192CU_APSTA_VERSION = d4f9f2fde682b95eb83d28c82ce11ff40c04e39c
+RTL8192CU_APSTA_SITE = $(call github,pvaret,rtl8192cu-fixes,$(RTL8192CU_APSTA_VERSION))
 RTL8192CU_APSTA_LICENSE = GPLv2+
 RTL8192CU_APSTA_DEPENDENCIES = linux
 RTL8192CU_APSTA_KVER = $(LINUX_VERSION_PROBED)
